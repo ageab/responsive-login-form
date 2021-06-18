@@ -1,0 +1,391 @@
+/* == Property CSS == */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font: 1rem "Poppins", sans-serif;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+[type="button"],
+[type="submit"],
+button {
+  -webkit-appearance: button;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.t-side {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.t-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.bg-main {
+  background: #2db3ff;
+}
+
+.text-main {
+  color: #2db3ff;
+}
+
+.text-gray {
+  color: #bbb;
+}
+
+.iconify {
+  position: relative;
+  top: 2px;
+  margin-right: 3px;
+}
+
+.outline-hover {
+  position: relative;
+}
+
+.outline-hover::before {
+  content: "";
+  background: #2db3ff;
+  height: 2px;
+  width: 0;
+  transition: width 0.2s ease-in-out;
+  position: absolute;
+  bottom: -5px;
+}
+
+.outline-hover:hover::before {
+  content: "";
+  width: 100%;
+}
+
+/* == Container == */
+.container {
+  max-width: 1080px;
+  width: 100vw;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* == Login Form == */
+.control-y {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+#login_box {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  box-shadow: 0px 67px 210px rgb(0 0 0 / 2%),
+    0px 20.1985px 63.3089px rgb(0 0 0 / 3%),
+    0px 8.38944px 26.2953px rgb(0 0 0 / 3%),
+    0px 3.0343px 9.51048px rgb(0 0 0 / 5%);
+  border-radius: 10px;
+  gap: 2rem;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  #login_box {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    box-shadow: none;
+  }
+  #login_box .images {
+    display: none;
+  }
+}
+
+#login_box .heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+#login_box .heading h1 {
+  font-size: 2.7rem;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+#login_box .heading span {
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 18px;
+}
+
+#login_box .form-group {
+  margin: 1rem 0;
+}
+
+#login_box .form-group label,
+#login_box .form-group input {
+  display: block;
+  margin: 5px;
+}
+
+#login_box .form-group label {
+  font-size: 18px;
+}
+
+#login_box .form-group input[type="text"],
+#login_box .form-group input[type="password"] {
+  border: 1px solid #f1f1f1;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.1s ease-in-out;
+}
+
+#login_box .form-group input[type="text"]:focus,
+#login_box .form-group input[type="password"]:focus {
+  border: 1px solid #2db3ff;
+}
+
+#login_box .form-group label.remember {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  color: #bbb;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#login_box .form-group label.remember input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+#login_box .form-group label.remember .checkmark {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background: #f1f1f1;
+}
+
+#login_box .form-group label.remember input ~ .checkmark {
+  background: #f1f1f1;
+  border-radius: 100%;
+}
+
+#login_box .form-group label.remember input:checked ~ .checkmark {
+  background: #2db3ff;
+}
+
+#login_box .form-group label.remember .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+#login_box .form-group label.remember input:checked ~ .checkmark::after {
+  display: block;
+}
+
+#login_box .form-group label.remember .checkmark::after {
+  left: 5px;
+  top: 3px;
+  width: 5px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#login_box .form-group button[type="submit"] {
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#login_box .images {
+  background: url("./waves.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 520px;
+  position: relative;
+}
+
+#login_box .images img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  width: 100%;
+}
+
+#login_box .forms {
+  padding-top: 2.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+#login_box .form {
+  padding: 0 1rem;
+}
+
+/* == OR == */
+.under {
+  padding: 0 1rem;
+}
+
+.or {
+  margin: 2rem 0;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.or span {
+  font-size: 1rem;
+  font-weight: 500;
+  background: #fff;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.or::before {
+  content: "";
+  position: absolute;
+  background: #f1f1f1;
+  height: 2px;
+  top: 50%;
+  width: 100%;
+  left: 50%;
+}
+
+.or::after {
+  content: "";
+  position: absolute;
+  background: #f1f1f1;
+  height: 2px;
+  top: 50%;
+  width: 100%;
+  right: 50%;
+}
+
+/* == Alternative Login == */
+.sign-with-google button {
+  padding: 1rem;
+  background: #f2f2f2;
+  text-align: center;
+  border-radius: 5px;
+  border: 0;
+  width: 100%;
+  color: #777;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 1;
+  transition: opacity 0.1s;
+}
+
+.sign-with-facebook button {
+  padding: 1rem;
+  background: #3c5a99;
+  text-align: center;
+  border-radius: 5px;
+  border: 0;
+  width: 100%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.sign-with-google button:hover,
+.sign-with-facebook button:hover {
+  opacity: 1;
+}
+
+.sign-up {
+  padding: 5px 0;
+  overflow: hidden;
+  margin: 2rem 0;
+  text-align: center;
+}
